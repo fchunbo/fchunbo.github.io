@@ -149,7 +149,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-12-09T16:00:00.000Z">2018-12-10</time>
+                <time class="level-item has-text-grey" datetime="2019-03-27T16:00:00.000Z">2019-03-28</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/Go/">Go</a>
@@ -159,7 +159,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 分钟 读完 (大约 354 个字)
+                    3 分钟 读完 (大约 509 个字)
                 </span>
                 
                 
@@ -168,28 +168,46 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2018/12/10/Go/3.go中的init函数/">3. Go 中的init函数</a>
+                <a class="has-link-black-ter" href="/2019/03/28/Go/5.函数闭包的使用以及注意/">5. Go 闭包</a>
             
         </h1>
         <div class="content">
-            1. 概述
-每一个源文件都可以有一个init函数，这个函数会在main函数运行之前，被Go框架所调用。
+            函数的闭包
+在GO语言中，是支持函数的闭包的，具体用法如下例子：
 
-2. init 函数的特征
- * init函数是用于程序执行前做包的初始化的函数，比如初始化包里的变量等
-   
-   
- * 每个包可以拥有多个init函数
-   
-   
- * 包的每个源文
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+
+
+func main() {
+
+    f := liner(10)
+
+    fmt.Println(f(1))
+    fmt.Prin
         </div>
         
         
         <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2018/12/10/Go/3.go中的init函数/#more">阅读更多</a>
+                <a class="button is-size-7 is-light" href="/2019/03/28/Go/5.函数闭包的使用以及注意/#more">阅读更多</a>
                 </div>
             </div>
         </div>
@@ -271,17 +289,17 @@ Go语言中如下数据类型为值传递：
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="0209-04-18T15:54:17.000Z">0209-04-19</time>
+                <time class="level-item has-text-grey" datetime="2018-12-09T16:00:00.000Z">2018-12-10</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Go/">Go</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Go/http/">http</a>
+                <a class="has-link-grey -link" href="/categories/Go/">Go</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    4 分钟 读完 (大约 552 个字)
+                    2 分钟 读完 (大约 354 个字)
                 </span>
                 
                 
@@ -290,38 +308,28 @@ Go语言中如下数据类型为值传递：
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/0209/04/19/Go/package/http/serverHander的分析/">http包中serverHandler类型的分析</a>
+                <a class="has-link-black-ter" href="/2018/12/10/Go/3.go中的init函数/">3. Go 中的init函数</a>
             
         </h1>
         <div class="content">
-            http包中serverHandler类型的分析
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
+            1. 概述
+每一个源文件都可以有一个init函数，这个函数会在main函数运行之前，被Go框架所调用。
 
-
-// serverHandler delegates to either the server's Handler or
-// DefaultServeMux and 
+2. init 函数的特征
+ * init函数是用于程序执行前做包的初始化的函数，比如初始化包里的变量等
+   
+   
+ * 每个包可以拥有多个init函数
+   
+   
+ * 包的每个源文
         </div>
         
         
         <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/0209/04/19/Go/package/http/serverHander的分析/#more">阅读更多</a>
+                <a class="button is-size-7 is-light" href="/2018/12/10/Go/3.go中的init函数/#more">阅读更多</a>
                 </div>
             </div>
         </div>
@@ -488,6 +496,25 @@ Go语言中如下数据类型为值传递：
         
         <article class="media">
             
+            <a href="/2019/08/12/Go/1. go_错误处理/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="1. Go 错误处理">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-11T16:00:00.000Z">2019-08-12</time></div>
+                    <a href="/2019/08/12/Go/1. go_错误处理/" class="title has-link-black-ter is-size-6 has-text-weight-normal">1. Go 错误处理</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Go/">Go</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/08/12/Go/4. Go中可导出的概念的理解/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="4. Go 可导出概念的理解">
@@ -517,25 +544,6 @@ Go语言中如下数据类型为值传递：
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-11T16:00:00.000Z">2019-08-12</time></div>
                     <a href="/2019/08/12/Go/go module/1. 如何简单的使用go mod来进行包管理/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Go Module的简单使用</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Go/">Go</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/08/12/Go/1. go_错误处理/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="1. Go 错误处理">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-11T16:00:00.000Z">2019-08-12</time></div>
-                    <a href="/2019/08/12/Go/1. go_错误处理/" class="title has-link-black-ter is-size-6 has-text-weight-normal">1. Go 错误处理</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Go/">Go</a>
                     </p>
@@ -621,7 +629,7 @@ Go语言中如下数据类型为值传递：
                     <span class="level-item">四月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">3</span>
                 </span>
             </a>
         </li>
@@ -644,17 +652,6 @@ Go语言中如下数据类型为值传递：
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">2</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/209/04/">
-                <span class="level-start">
-                    <span class="level-item">四月 0209</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
                 </span>
             </a>
         </li>
@@ -704,6 +701,25 @@ Go语言中如下数据类型为值传递：
         
         <article class="media">
             
+            <a href="/2019/08/12/Go/1. go_错误处理/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="1. Go 错误处理">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-11T16:00:00.000Z">2019-08-12</time></div>
+                    <a href="/2019/08/12/Go/1. go_错误处理/" class="title has-link-black-ter is-size-6 has-text-weight-normal">1. Go 错误处理</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Go/">Go</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/08/12/Go/4. Go中可导出的概念的理解/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="4. Go 可导出概念的理解">
@@ -733,25 +749,6 @@ Go语言中如下数据类型为值传递：
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-11T16:00:00.000Z">2019-08-12</time></div>
                     <a href="/2019/08/12/Go/go module/1. 如何简单的使用go mod来进行包管理/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Go Module的简单使用</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Go/">Go</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/08/12/Go/1. go_错误处理/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="1. Go 错误处理">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-11T16:00:00.000Z">2019-08-12</time></div>
-                    <a href="/2019/08/12/Go/1. go_错误处理/" class="title has-link-black-ter is-size-6 has-text-weight-normal">1. Go 错误处理</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Go/">Go</a>
                     </p>
@@ -837,7 +834,7 @@ Go语言中如下数据类型为值传递：
                     <span class="level-item">四月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">3</span>
                 </span>
             </a>
         </li>
@@ -860,17 +857,6 @@ Go语言中如下数据类型为值传递：
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">2</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/209/04/">
-                <span class="level-start">
-                    <span class="level-item">四月 0209</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
                 </span>
             </a>
         </li>
