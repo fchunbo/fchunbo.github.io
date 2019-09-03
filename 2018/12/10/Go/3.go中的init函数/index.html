@@ -7,21 +7,22 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>标签 - fchunbo 博客</title>
+<title>3. Go 中的init函数 - fchunbo 博客</title>
 
 
-    <meta name="description" content="fdasfdsa">
+    <meta name="description" content="1. 概述 每一个源文件都可以有一个init函数，这个函数会在main函数运行之前，被Go框架所调用。  2. init 函数的特征  * init函数是用于程序执行前做包的初始化的函数，比如初始化包里的变量等          * 每个包可以拥有多个init函数          * 包的每个源文">
 <meta name="keywords" content="Go">
-<meta property="og:type" content="website">
-<meta property="og:title" content="fchunbo 博客">
-<meta property="og:url" content="https://fchunbo.github.io/tags/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="3. Go 中的init函数">
+<meta property="og:url" content="https://fchunbo.github.io/2018/12/10/Go/3.go中的init函数/index.html">
 <meta property="og:site_name" content="fchunbo 博客">
-<meta property="og:description" content="fdasfdsa">
+<meta property="og:description" content="1. 概述 每一个源文件都可以有一个init函数，这个函数会在main函数运行之前，被Go框架所调用。  2. init 函数的特征  * init函数是用于程序执行前做包的初始化的函数，比如初始化包里的变量等          * 每个包可以拥有多个init函数          * 包的每个源文">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://fchunbo.github.io/images/og_image.png">
+<meta property="og:updated_time" content="2019-09-03T15:14:42.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="fchunbo 博客">
-<meta name="twitter:description" content="fdasfdsa">
+<meta name="twitter:title" content="3. Go 中的init函数">
+<meta name="twitter:description" content="1. 概述 每一个源文件都可以有一个init函数，这个函数会在main函数运行之前，被Go框架所调用。  2. init 函数的特征  * init函数是用于程序执行前做包的初始化的函数，比如初始化包里的变量等          * 每个包可以拥有多个init函数          * 包的每个源文">
 <meta name="twitter:image" content="https://fchunbo.github.io/images/og_image.png">
 
 
@@ -92,7 +93,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="fchunbo 博客" height="28">
+                <img src="/images/logo.svg" alt="3. Go 中的init函数" height="28">
             
             </a>
         </div>
@@ -109,7 +110,7 @@
                 <a class="navbar-item"
                 href="/categories">Categories</a>
                 
-                <a class="navbar-item is-active"
+                <a class="navbar-item"
                 href="/tags">Tags</a>
                 
                 <a class="navbar-item"
@@ -133,25 +134,143 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                标签
-            </h3>
-            <div class="field is-grouped is-grouped-multiline">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2018-12-09T16:00:00.000Z">2018-12-10</time>
                 
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/Go/">
-                        <span class="tag">Go</span>
-                        <span class="tag is-grey">13</span>
-                    </a>
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Go/">Go</a>
                 </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2 分钟 读完 (大约 354 个字)
+                </span>
+                
                 
             </div>
         </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                3. Go 中的init函数
+            
+        </h1>
+        <div class="content">
+            <h1 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h1><p>每一个源文件都可以有一个<code>init</code>函数，这个函数会在main函数运行之前，被Go框架所调用。</p>
+<h1 id="2-init-函数的特征"><a href="#2-init-函数的特征" class="headerlink" title="2. init 函数的特征"></a>2. init 函数的特征</h1><ul>
+<li><p>init函数是用于程序执行前做包的初始化的函数，比如初始化包里的变量等</p>
+</li>
+<li><p>每个包可以拥有多个init函数</p>
+</li>
+<li><p>包的每个源文件也可以拥有多个init函数</p>
+</li>
+<li><p>同一个包中多个init函数的执行顺序go语言没有明确的定义(说明)</p>
+</li>
+<li><p>不同包的init函数按照包导入的依赖关系决定该初始化函数的执行顺序</p>
+</li>
+<li><p>init函数不能被其他函数调用，而是在main函数执行之前，自动被调用</p>
+</li>
+</ul>
+<h1 id="3-init函数的注意事项和细节"><a href="#3-init函数的注意事项和细节" class="headerlink" title="3. init函数的注意事项和细节"></a>3. init函数的注意事项和细节</h1><ul>
+<li><p>如果一个文件同时包含全局变量的定义，init函数，main函数和全局变量的定义的执行流程：</p>
+<p><img src="/images/init.png" alt="init"></p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">	A[全局变量定义] --&gt; B(init 函数)</span><br><span class="line">	B --&gt; C(main函数)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>init</code>函数最主要的作用就是完成初始化工作</p>
+</li>
+</ul>
+<p>例子：</p>
+<figure class="highlight go hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> *</span></span><br><span class="line"><span class="hljs-comment"> * @Author fchunbo</span></span><br><span class="line"><span class="hljs-comment"> * @Date 2018-12-10 19:19</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">import</span> (</span><br><span class="line">    <span class="hljs-string">"fmt"</span></span><br><span class="line">    <span class="hljs-string">"ideaProject/initDemo/util"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 先执行变量定义</span></span><br><span class="line"><span class="hljs-keyword">var</span> age = test()</span><br><span class="line"><span class="hljs-keyword">var</span> name <span class="hljs-keyword">string</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">test</span><span class="hljs-params">()</span> <span class="hljs-title">int</span></span> &#123;</span><br><span class="line">    fmt.Println(<span class="hljs-string">"test ..."</span>)</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 再执行init函数</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">init</span><span class="hljs-params">()</span></span> &#123;</span><br><span class="line">    name = <span class="hljs-string">"Jery"</span></span><br><span class="line">    fmt.Println(<span class="hljs-string">"main age init ....."</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 最后执行main函数</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;</span><br><span class="line">    fmt.Println(<span class="hljs-string">"do main.... "</span>)</span><br><span class="line">    fmt.Println(<span class="hljs-string">"Age = "</span>, util.Age, <span class="hljs-string">", Name = "</span>, util.Name)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Go/">Go</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+</div>
+<script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "2", "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script>
+        
     </div>
-</div></div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
+            
+                
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <i class="fab fa-alipay"></i>
+    </span>
+    <span>支付宝</span>
+    <div class="qrcode"><img src="https://github.com/fchunbo/qrcode/blob/master/alipay.jpeg?raw=true" alt="支付宝"></div>
+</a>
+
+                
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>微信</span>
+    <div class="qrcode"><img src="https://github.com/fchunbo/qrcode/blob/master/wchat.jpeg?raw=true" alt="微信"></div>
+</a>
+
+                
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/03/28/Go/5.函数闭包的使用以及注意/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">5. Go 闭包</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2018/12/10/Go/2.go中的函数参数传递类型/">
+                <span class="level-item">2. Go中函数参数传递类型</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+</div>
                 
 
 
@@ -707,7 +826,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="fchunbo 博客" height="28">
+                    <img src="/images/logo.svg" alt="3. Go 中的init函数" height="28">
                 
                 </a>
                 <p class="is-size-7">

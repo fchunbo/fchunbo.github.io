@@ -7,21 +7,22 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>标签 - fchunbo 博客</title>
+<title>2. Go中函数参数传递类型 - fchunbo 博客</title>
 
 
-    <meta name="description" content="fdasfdsa">
+    <meta name="description" content="1. 概述 在Go语言中，函数的参数的传递类型，分为值传递和引用传递。但本质就只有值传递，引用传递本质传递是数据存储空间的地址值。  2. 值传递和引用传递 Go语言中如下数据类型为值传递：   * 基本数据类型中int系列、float系列、bool、string、byte  * 数组  * 结构体">
 <meta name="keywords" content="Go">
-<meta property="og:type" content="website">
-<meta property="og:title" content="fchunbo 博客">
-<meta property="og:url" content="https://fchunbo.github.io/tags/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2. Go中函数参数传递类型">
+<meta property="og:url" content="https://fchunbo.github.io/2018/12/10/Go/2.go中的函数参数传递类型/index.html">
 <meta property="og:site_name" content="fchunbo 博客">
-<meta property="og:description" content="fdasfdsa">
+<meta property="og:description" content="1. 概述 在Go语言中，函数的参数的传递类型，分为值传递和引用传递。但本质就只有值传递，引用传递本质传递是数据存储空间的地址值。  2. 值传递和引用传递 Go语言中如下数据类型为值传递：   * 基本数据类型中int系列、float系列、bool、string、byte  * 数组  * 结构体">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://fchunbo.github.io/images/og_image.png">
+<meta property="og:updated_time" content="2019-09-03T15:14:36.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="fchunbo 博客">
-<meta name="twitter:description" content="fdasfdsa">
+<meta name="twitter:title" content="2. Go中函数参数传递类型">
+<meta name="twitter:description" content="1. 概述 在Go语言中，函数的参数的传递类型，分为值传递和引用传递。但本质就只有值传递，引用传递本质传递是数据存储空间的地址值。  2. 值传递和引用传递 Go语言中如下数据类型为值传递：   * 基本数据类型中int系列、float系列、bool、string、byte  * 数组  * 结构体">
 <meta name="twitter:image" content="https://fchunbo.github.io/images/og_image.png">
 
 
@@ -92,7 +93,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="fchunbo 博客" height="28">
+                <img src="/images/logo.svg" alt="2. Go中函数参数传递类型" height="28">
             
             </a>
         </div>
@@ -109,7 +110,7 @@
                 <a class="navbar-item"
                 href="/categories">Categories</a>
                 
-                <a class="navbar-item is-active"
+                <a class="navbar-item"
                 href="/tags">Tags</a>
                 
                 <a class="navbar-item"
@@ -133,25 +134,142 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                标签
-            </h3>
-            <div class="field is-grouped is-grouped-multiline">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2018-12-09T16:00:00.000Z">2018-12-10</time>
                 
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/Go/">
-                        <span class="tag">Go</span>
-                        <span class="tag is-grey">13</span>
-                    </a>
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Go/">Go</a>
                 </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    3 分钟 读完 (大约 378 个字)
+                </span>
+                
                 
             </div>
         </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                2. Go中函数参数传递类型
+            
+        </h1>
+        <div class="content">
+            <h1 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h1><p>在<code>Go</code>语言中，函数的参数的传递类型，分为<strong>值传递</strong>和<strong>引用传递</strong>。但本质就只有值传递，引用传递本质传递是数据存储空间的地址值。</p>
+<h1 id="2-值传递和引用传递"><a href="#2-值传递和引用传递" class="headerlink" title="2. 值传递和引用传递"></a>2. 值传递和引用传递</h1><p>Go语言中如下数据类型为<strong>值传递</strong>：</p>
+<ul>
+<li>基本数据类型中int系列、float系列、bool、string、byte</li>
+<li>数组</li>
+<li>结构体</li>
+</ul>
+<p>注意：上述的数据类型，在分配内存的时候，使用的是<code>new</code>函数。</p>
+<p>如下数据类型为<strong>引用传递</strong>：</p>
+<ul>
+<li>map</li>
+<li>切片slice</li>
+<li>管道chan</li>
+<li>interface</li>
+<li>函数类型</li>
+<li>所有数据类型的指针类型</li>
+</ul>
+<p>注意：map、slice、chan在分配内存的时候，使用的是<code>make</code>函数。</p>
+<p>也就是说：值类型的内存空间使用new来分配，引用数据类型的空间使用的是make来分配。</p>
+<h1 id="3-值传递和引用传递的特点"><a href="#3-值传递和引用传递的特点" class="headerlink" title="3. 值传递和引用传递的特点"></a>3. 值传递和引用传递的特点</h1><p>值传递和引用传递的特点如下：</p>
+<ul>
+<li>值类型默认是值传递，变量直接存储值，内存通常在占中分配</li>
+<li>引用数据类型默认是引用传递，变量存储的是一个地址值，这个地址对应的空间才为存储数据的地址。内存通常在堆上分配，当没有任何变量引用这个地址时，该地址对应的空间就成为一个垃圾，由GC来回收。</li>
+</ul>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Go/">Go</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+</div>
+<script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "2", "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script>
+        
     </div>
-</div></div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
+            
+                
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <i class="fab fa-alipay"></i>
+    </span>
+    <span>支付宝</span>
+    <div class="qrcode"><img src="https://github.com/fchunbo/qrcode/blob/master/alipay.jpeg?raw=true" alt="支付宝"></div>
+</a>
+
+                
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>微信</span>
+    <div class="qrcode"><img src="https://github.com/fchunbo/qrcode/blob/master/wchat.jpeg?raw=true" alt="微信"></div>
+</a>
+
+                
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2018/12/10/Go/3.go中的init函数/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">3. Go 中的init函数</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/0209/04/19/Go/package/http/serverHander的分析/">
+                <span class="level-item">http包中serverHandler类型的分析</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+</div>
                 
 
 
@@ -707,7 +825,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="fchunbo 博客" height="28">
+                    <img src="/images/logo.svg" alt="2. Go中函数参数传递类型" height="28">
                 
                 </a>
                 <p class="is-size-7">

@@ -7,21 +7,22 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>标签 - fchunbo 博客</title>
+<title>8. Go Channel的使用 - fchunbo 博客</title>
 
 
-    <meta name="description" content="fdasfdsa">
+    <meta name="description" content="Go Channel 在Go中，多个goroutines推荐使用channel来进行通信。使用channel来共享内存。  go中channel有三种类型：读写channel, 只读channel，只写的channel  默认为读写的channel：  1   c := make(chan int)">
 <meta name="keywords" content="Go">
-<meta property="og:type" content="website">
-<meta property="og:title" content="fchunbo 博客">
-<meta property="og:url" content="https://fchunbo.github.io/tags/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="8. Go Channel的使用">
+<meta property="og:url" content="https://fchunbo.github.io/2019/04/03/Go/8.Channel/index.html">
 <meta property="og:site_name" content="fchunbo 博客">
-<meta property="og:description" content="fdasfdsa">
+<meta property="og:description" content="Go Channel 在Go中，多个goroutines推荐使用channel来进行通信。使用channel来共享内存。  go中channel有三种类型：读写channel, 只读channel，只写的channel  默认为读写的channel：  1   c := make(chan int)">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://fchunbo.github.io/images/og_image.png">
+<meta property="og:updated_time" content="2019-09-03T15:15:05.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="fchunbo 博客">
-<meta name="twitter:description" content="fdasfdsa">
+<meta name="twitter:title" content="8. Go Channel的使用">
+<meta name="twitter:description" content="Go Channel 在Go中，多个goroutines推荐使用channel来进行通信。使用channel来共享内存。  go中channel有三种类型：读写channel, 只读channel，只写的channel  默认为读写的channel：  1   c := make(chan int)">
 <meta name="twitter:image" content="https://fchunbo.github.io/images/og_image.png">
 
 
@@ -92,7 +93,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="fchunbo 博客" height="28">
+                <img src="/images/logo.svg" alt="8. Go Channel的使用" height="28">
             
             </a>
         </div>
@@ -109,7 +110,7 @@
                 <a class="navbar-item"
                 href="/categories">Categories</a>
                 
-                <a class="navbar-item is-active"
+                <a class="navbar-item"
                 href="/tags">Tags</a>
                 
                 <a class="navbar-item"
@@ -133,25 +134,141 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                标签
-            </h3>
-            <div class="field is-grouped is-grouped-multiline">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-04-02T16:00:00.000Z">2019-04-03</time>
                 
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/Go/">
-                        <span class="tag">Go</span>
-                        <span class="tag is-grey">13</span>
-                    </a>
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Go/">Go</a>
                 </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    3 分钟 读完 (大约 465 个字)
+                </span>
+                
                 
             </div>
         </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                8. Go Channel的使用
+            
+        </h1>
+        <div class="content">
+            <h2 id="Go-Channel"><a href="#Go-Channel" class="headerlink" title="Go Channel"></a>Go Channel</h2><p>在Go中，多个goroutines推荐使用channel来进行通信。使用channel来共享内存。</p>
+<p>go中channel有三种类型：<code>读写channel</code>, <code>只读channel</code>，<code>只写的channel</code></p>
+<p>默认为读写的channel：</p>
+<figure class="highlight go hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">c := <span class="hljs-built_in">make</span>(<span class="hljs-keyword">chan</span> <span class="hljs-keyword">int</span>)</span><br></pre></td></tr></table></figure>
+<p>同时channel还可以有缓存。定义如下：</p>
+<figure class="highlight go hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">c := <span class="hljs-built_in">make</span>(<span class="hljs-keyword">chan</span> <span class="hljs-keyword">int</span>, <span class="hljs-number">2</span>)</span><br></pre></td></tr></table></figure>
+<p>上述定义了带有2个元素缓存的，channel</p>
+<p>一般只读或只写的channel，大多出现在函数传参中，当然也可以直接定义：</p>
+<figure class="highlight go hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">c1 := <span class="hljs-built_in">make</span>(&lt;-<span class="hljs-keyword">chan</span> <span class="hljs-keyword">int</span>) <span class="hljs-comment">// 定义了一个只读的channel</span></span><br><span class="line">c2 := <span class="hljs-built_in">make</span>(<span class="hljs-keyword">chan</span> &lt;-<span class="hljs-keyword">int</span>) <span class="hljs-comment">// 定义了一个只写的channel</span></span><br></pre></td></tr></table></figure>
+<p>注意：</p>
+<ul>
+<li><p>对于缓存的channel，写数据也是阻塞的，直到将channel中的数据读出；读也是阻塞的，直到channel中有数据可读</p>
+<figure class="highlight go hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;</span><br><span class="line">  c := <span class="hljs-built_in">make</span>(<span class="hljs-keyword">chan</span> <span class="hljs-keyword">bool</span>)</span><br><span class="line">    <span class="hljs-keyword">go</span> <span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">()</span></span> &#123;</span><br><span class="line">        fmt.Println(<span class="hljs-string">"Go GO Go !!"</span>)</span><br><span class="line">        c &lt;- <span class="hljs-literal">true</span></span><br><span class="line">    &#125;()</span><br><span class="line">  </span><br><span class="line">   &lt;- c <span class="hljs-comment">// 等待读取数据，</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>对于带缓存的channel，在使用时，一定要注意如下情况：</p>
+<figure class="highlight go hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// 下面这种情况，需要注意，channel是否有缓存</span></span><br><span class="line"><span class="hljs-comment">// 否则在实际的开发中，很有可能goroutines还没有执行</span></span><br><span class="line"><span class="hljs-comment">// 程序就结束了。</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">//c := make(chan bool, 1)</span></span><br><span class="line">    c := <span class="hljs-built_in">make</span>(<span class="hljs-keyword">chan</span> <span class="hljs-keyword">bool</span>)</span><br><span class="line">    <span class="hljs-keyword">go</span> <span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">()</span></span> &#123;</span><br><span class="line">        fmt.Println(<span class="hljs-string">"Go GO Go !!"</span>)</span><br><span class="line">        &lt;- c</span><br><span class="line">    &#125;()</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 对于无缓存时，如果没有读取channle中的数据，写也是阻塞的,必须将数据</span></span><br><span class="line">    <span class="hljs-comment">// 读取了之后，才能退出</span></span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// 对于有缓存的channel，我把数据写进去就是，不管你是否读取。</span></span><br><span class="line">    c &lt;- <span class="hljs-literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="判断channel是否关闭"><a href="#判断channel是否关闭" class="headerlink" title="判断channel是否关闭"></a>判断channel是否关闭</h2><p>判断channnel是否关闭，是在接收channel的数据时候，判断的：</p>
+<figure class="highlight go hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">v, ok := &lt;-c <span class="hljs-comment">// 如果channel关闭了，ok = false</span></span><br></pre></td></tr></table></figure>
+<p>特别在<code>for range</code>循环遍历channel时，必须使用<code>Close()</code>函数关闭channnel，表示结束数据的写入，同时for循环也终止。</p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Go/">Go</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+</div>
+<script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "2", "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script>
+        
     </div>
-</div></div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
+            
+                
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <i class="fab fa-alipay"></i>
+    </span>
+    <span>支付宝</span>
+    <div class="qrcode"><img src="https://github.com/fchunbo/qrcode/blob/master/alipay.jpeg?raw=true" alt="支付宝"></div>
+</a>
+
+                
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>微信</span>
+    <div class="qrcode"><img src="https://github.com/fchunbo/qrcode/blob/master/wchat.jpeg?raw=true" alt="微信"></div>
+</a>
+
+                
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/04/21/Go/9.Go语言的内存模型/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">9. Go 内存模型</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/03/31/Go/7.接口的理解/">
+                <span class="level-item">7. Go 中接口的理解</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+</div>
                 
 
 
@@ -707,7 +824,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="fchunbo 博客" height="28">
+                    <img src="/images/logo.svg" alt="8. Go Channel的使用" height="28">
                 
                 </a>
                 <p class="is-size-7">

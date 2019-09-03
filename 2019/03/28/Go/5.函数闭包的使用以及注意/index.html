@@ -7,21 +7,22 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>标签 - fchunbo 博客</title>
+<title>5. Go 闭包 - fchunbo 博客</title>
 
 
-    <meta name="description" content="fdasfdsa">
+    <meta name="description" content="函数的闭包 在GO语言中，是支持函数的闭包的，具体用法如下例子：  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18   func main() {      f := liner(10)      fmt.Println(f(1))     fmt.Prin">
 <meta name="keywords" content="Go">
-<meta property="og:type" content="website">
-<meta property="og:title" content="fchunbo 博客">
-<meta property="og:url" content="https://fchunbo.github.io/tags/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="5. Go 闭包">
+<meta property="og:url" content="https://fchunbo.github.io/2019/03/28/Go/5.函数闭包的使用以及注意/index.html">
 <meta property="og:site_name" content="fchunbo 博客">
-<meta property="og:description" content="fdasfdsa">
+<meta property="og:description" content="函数的闭包 在GO语言中，是支持函数的闭包的，具体用法如下例子：  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18   func main() {      f := liner(10)      fmt.Println(f(1))     fmt.Prin">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://fchunbo.github.io/images/og_image.png">
+<meta property="og:updated_time" content="2019-09-03T15:14:51.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="fchunbo 博客">
-<meta name="twitter:description" content="fdasfdsa">
+<meta name="twitter:title" content="5. Go 闭包">
+<meta name="twitter:description" content="函数的闭包 在GO语言中，是支持函数的闭包的，具体用法如下例子：  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18   func main() {      f := liner(10)      fmt.Println(f(1))     fmt.Prin">
 <meta name="twitter:image" content="https://fchunbo.github.io/images/og_image.png">
 
 
@@ -92,7 +93,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="fchunbo 博客" height="28">
+                <img src="/images/logo.svg" alt="5. Go 闭包" height="28">
             
             </a>
         </div>
@@ -109,7 +110,7 @@
                 <a class="navbar-item"
                 href="/categories">Categories</a>
                 
-                <a class="navbar-item is-active"
+                <a class="navbar-item"
                 href="/tags">Tags</a>
                 
                 <a class="navbar-item"
@@ -133,25 +134,134 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                标签
-            </h3>
-            <div class="field is-grouped is-grouped-multiline">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-03-27T16:00:00.000Z">2019-03-28</time>
                 
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/Go/">
-                        <span class="tag">Go</span>
-                        <span class="tag is-grey">13</span>
-                    </a>
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Go/">Go</a>
                 </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    3 分钟 读完 (大约 509 个字)
+                </span>
+                
                 
             </div>
         </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                5. Go 闭包
+            
+        </h1>
+        <div class="content">
+            <h1 id="函数的闭包"><a href="#函数的闭包" class="headerlink" title="函数的闭包"></a>函数的闭包</h1><p>在<code>GO</code>语言中，是支持函数的闭包的，具体用法如下例子：</p>
+<figure class="highlight go hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;</span><br><span class="line"></span><br><span class="line">    f := liner(<span class="hljs-number">10</span>)</span><br><span class="line"></span><br><span class="line">    fmt.Println(f(<span class="hljs-number">1</span>))</span><br><span class="line">    fmt.Println(f(<span class="hljs-number">2</span>))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * 这是一个闭包的例子</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">liner</span><span class="hljs-params">(x <span class="hljs-keyword">int</span>)</span> <span class="hljs-title">func</span><span class="hljs-params">(<span class="hljs-keyword">int</span>)</span> <span class="hljs-title">int</span></span> &#123;</span><br><span class="line">    fmt.Printf(<span class="hljs-string">"%v\n"</span>, &amp;x)</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(y <span class="hljs-keyword">int</span>)</span> <span class="hljs-title">int</span></span> &#123;</span><br><span class="line">        fmt.Printf(<span class="hljs-string">"%v\n"</span>, &amp;x)</span><br><span class="line">        <span class="hljs-keyword">return</span> x + y</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>结果为：</p>
+<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">0xc000062008</span><br><span class="line">0xc000062008</span><br><span class="line">11</span><br><span class="line">0xc000062008</span><br><span class="line">12</span><br></pre></td></tr></table></figure>
+<p>对于闭包，自己的理解就是：在函数中的匿名函数，使用了外部函数的变量。外部函数调用之后，返回的函数，在使用过程中，外部函数的变量一直未被销毁，感觉上就像是外部函数的变量，一直被内部的匿名函数给”包裹”，始终拥有外部函数变量的引用。</p>
+<p>从打印结果看，外部变量的地址和匿名函数调用时，使用的x是同一变量。</p>
+<p>注意: 在循环中使用<code>defer</code></p>
+<figure class="highlight go hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> <span class="hljs-string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;    </span><br><span class="line">    <span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i ++ &#123;</span><br><span class="line">        <span class="hljs-keyword">defer</span> <span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">()</span></span> &#123;</span><br><span class="line">            fmt.Println(i)</span><br><span class="line">        &#125;()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这段代码的原本的想要的结果为：<code>0 1 2</code> 但是上述代码执行的结果为: </p>
+<figure class="highlight go hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-number">3</span></span><br><span class="line"><span class="hljs-number">3</span></span><br><span class="line"><span class="hljs-number">3</span></span><br></pre></td></tr></table></figure>
+<p>为什么会这样呢？其实这也是闭包的使用，在defer函数使用i其实是对变量<code>i</code>的引用，当循环结果后，i的值为3，既然defer修饰的函数是对变量<code>i</code>的引用，所以所有的defer函数都打印出了3.</p>
+<p>所以，在使用defer修饰的匿名函数时，一定要注意，慎重使用所在函数的变量。</p>
+<p>为了加深印象, 打印如下代码的结果：</p>
+<figure class="highlight go hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;</span><br><span class="line">    <span class="hljs-keyword">var</span> fs = [<span class="hljs-number">4</span>]<span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">()</span></span>&#123;&#125;</span><br><span class="line">    <span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">4</span>; i++ &#123;</span><br><span class="line">        <span class="hljs-keyword">defer</span> fmt.Println(<span class="hljs-string">"defer i = "</span>, i)</span><br><span class="line"></span><br><span class="line">      <span class="hljs-comment">// 这也是闭包</span></span><br><span class="line">        <span class="hljs-keyword">defer</span> <span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">            fmt.Println(<span class="hljs-string">"defer_closure i = "</span>, i)<span class="hljs-comment">// 保存了i的引用</span></span><br><span class="line">        &#125;()</span><br><span class="line"></span><br><span class="line">        <span class="hljs-comment">// 这也是闭包，这里只是保存了i变量的引用</span></span><br><span class="line">        fs[i] = <span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">()</span></span> &#123;</span><br><span class="line">            fmt.Println(<span class="hljs-string">"closure i = "</span>, i)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">for</span> _, f := <span class="hljs-keyword">range</span> fs &#123;</span><br><span class="line">        f()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>结果为：</p>
+<figure class="highlight go hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">closure i =  <span class="hljs-number">4</span></span><br><span class="line">closure i =  <span class="hljs-number">4</span></span><br><span class="line">closure i =  <span class="hljs-number">4</span></span><br><span class="line">closure i =  <span class="hljs-number">4</span></span><br><span class="line">defer_closure i =  <span class="hljs-number">4</span></span><br><span class="line"><span class="hljs-keyword">defer</span> i =  <span class="hljs-number">3</span></span><br><span class="line">defer_closure i =  <span class="hljs-number">4</span></span><br><span class="line"><span class="hljs-keyword">defer</span> i =  <span class="hljs-number">2</span></span><br><span class="line">defer_closure i =  <span class="hljs-number">4</span></span><br><span class="line"><span class="hljs-keyword">defer</span> i =  <span class="hljs-number">1</span></span><br><span class="line">defer_closure i =  <span class="hljs-number">4</span></span><br><span class="line"><span class="hljs-keyword">defer</span> i =  <span class="hljs-number">0</span></span><br></pre></td></tr></table></figure>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Go/">Go</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+</div>
+<script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "2", "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script>
+        
     </div>
-</div></div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
+            
+                
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <i class="fab fa-alipay"></i>
+    </span>
+    <span>支付宝</span>
+    <div class="qrcode"><img src="https://github.com/fchunbo/qrcode/blob/master/alipay.jpeg?raw=true" alt="支付宝"></div>
+</a>
+
+                
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>微信</span>
+    <div class="qrcode"><img src="https://github.com/fchunbo/qrcode/blob/master/wchat.jpeg?raw=true" alt="微信"></div>
+</a>
+
+                
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/03/28/Go/6.struct/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">6. Go 语言中结构体的使用</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2018/12/10/Go/3.go中的init函数/">
+                <span class="level-item">3. Go 中的init函数</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+</div>
                 
 
 
@@ -707,7 +817,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="fchunbo 博客" height="28">
+                    <img src="/images/logo.svg" alt="5. Go 闭包" height="28">
                 
                 </a>
                 <p class="is-size-7">
