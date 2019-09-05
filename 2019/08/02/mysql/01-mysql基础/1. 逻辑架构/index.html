@@ -19,7 +19,7 @@
 <meta property="og:description" content="1. 逻辑架构   2. 逻辑架构说明 连接器（Connectors） 也就是mysql的 连接驱动  系统管理和控制工具（Management Serveices &amp; Utilities）   连接池（Connection Pool）  SQL Layer MySQL业务层  SQL接口（SQL">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://fchunbo.github.io/images/og_image.png">
-<meta property="og:updated_time" content="2019-09-03T23:34:22.000Z">
+<meta property="og:updated_time" content="2019-09-05T04:24:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mysql 逻辑架构">
 <meta name="twitter:description" content="1. 逻辑架构   2. 逻辑架构说明 连接器（Connectors） 也就是mysql的 连接驱动  系统管理和控制工具（Management Serveices &amp; Utilities）   连接池（Connection Pool）  SQL Layer MySQL业务层  SQL接口（SQL">
@@ -86,6 +86,7 @@
 
 
 <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/bootstrap-theme.min.css">
 </head>
 <body class="is-2-column">
     <nav class="navbar navbar-main">
@@ -293,6 +294,7 @@
         <div class="level is-size-7 is-uppercase">
             <div class="level-start">
                 <div class="level-item">
+<!--                    <span class="is-size-6 has-text-grey has-mr-7">#class: 'has-link-grey</span>-->
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
                     <a class="has-link-grey -link" href="/tags/MySql/">MySql</a>
                 </div>
@@ -351,16 +353,16 @@
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/08/12/Go/go module/1. 如何简单的使用go mod来进行包管理/">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/08/02/mysql/01-mysql基础/3. MySQL执行顺序/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">Go Module的简单使用</span>
+                <span class="level-item">Mysql SQL执行顺序</span>
             </a>
         </div>
         
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/08/02/mysql/01-mysql基础/5. mysql数据文件/">
-                <span class="level-item">Mysql的数据文件</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/07/22/Go/package/http/go语言提供的静态服务器/">
+                <span class="level-item">go语言提供的静态服务器</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -371,12 +373,11 @@
 
 </div>
                 
-                
 
 
 
 
-<div class="column is-2-tablet is-2-desktop is-2-widescreen  has-order-3 column-right ">
+<div class="column is-2-tablet is-2-desktop is-2-widescreen  has-order-1 column-left ">
     
         
 <div class="card widget">
@@ -425,12 +426,17 @@
 </div>
     
     
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+        </div>
+    
 </div>
 
+                
             </div>
         </div>
     </section>
-    <footer class="footer">
+<!--    <footer class="footer">
     <div class="container">
         <div class="level">
             <div class="level-start has-text-centered-mobile">
@@ -451,7 +457,7 @@
             </div>
         </div>
     </div>
-</footer>
+</footer>-->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
 <script>moment.locale("zh-CN");</script>

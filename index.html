@@ -81,6 +81,7 @@
 
 
 <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/bootstrap-theme.min.css">
 </head>
 <body class="is-2-column">
     <nav class="navbar navbar-main">
@@ -121,6 +122,62 @@
         <div class="container" style="width:100%;max-width:none;margin-left: 0px;">
             <div class="columns">
                 <div class="column is-10-tablet is-10-desktop is-10-widescreen has-order-2 column-main">
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-08-11T16:00:00.000Z">2019-08-12</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Go/">Go</a>
+                </div>
+                
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/08/12/Go/go module/1. 如何简单的使用go mod来进行包管理/">Go Module的简单使用</a>
+            
+        </h1>
+        <div class="content">
+            Go Module的简单使用
+1. 打开Go Module
+1
+
+
+export GO111MODULE=on[off|auto]
+
+
+ * on 表示仅使用Go Modules模式来管理go的依赖
+ * off 表示关闭Go Modules模式，使用GOPATH
+ * auto 表示如果在GOPA
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/08/12/Go/go module/1. 如何简单的使用go mod来进行包管理/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
     <div class="card">
     
     <div class="card-content article ">
@@ -234,10 +291,10 @@ type error interface {
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-08-11T16:00:00.000Z">2019-08-12</time>
+                <time class="level-item has-text-grey" datetime="2019-08-01T16:00:00.000Z">2019-08-02</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Go/">Go</a>
+                <a class="has-link-grey -link" href="/categories/MySql/">MySql</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/MySql/Basic/">Basic</a>
                 </div>
                 
                 
@@ -247,28 +304,21 @@ type error interface {
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/08/12/Go/go module/1. 如何简单的使用go mod来进行包管理/">Go Module的简单使用</a>
+                <a class="has-link-black-ter" href="/2019/08/02/mysql/01-mysql基础/2. mysql执行流程/">Mysql 执行流程</a>
             
         </h1>
         <div class="content">
-            Go Module的简单使用
-1. 打开Go Module
-1
+            1. 简单版本的执行流程
 
 
-export GO111MODULE=on[off|auto]
-
-
- * on 表示仅使用Go Modules模式来管理go的依赖
- * off 表示关闭Go Modules模式，使用GOPATH
- * auto 表示如果在GOPA
+2. 复杂版本的执行流程
         </div>
         
         
         <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/08/12/Go/go module/1. 如何简单的使用go mod来进行包管理/#more">阅读更多</a>
+                <a class="button is-size-7 is-light" href="/2019/08/02/mysql/01-mysql基础/2. mysql执行流程/#more">阅读更多</a>
                 </div>
             </div>
         </div>
@@ -303,31 +353,24 @@ export GO111MODULE=on[off|auto]
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/08/02/mysql/01-mysql基础/1. 逻辑架构/">Mysql 逻辑架构</a>
+                <a class="has-link-black-ter" href="/2019/08/02/mysql/01-mysql基础/6. mysql中的索引/">Mysql中的索引原理</a>
             
         </h1>
         <div class="content">
-            1. 逻辑架构
+            1. 是什么
+官方介绍索引是帮助MySQL高效获取数据的数据结构。更通俗的说，数据库索引好比是一本书前面的目录，能加快数据库的查询速度， 也就是排序好的快速查询的数据结构。
 
-
-2. 逻辑架构说明
-连接器（Connectors）
-也就是mysql的 连接驱动
-
-系统管理和控制工具（Management Serveices & Utilities） 
-
-连接池（Connection Pool）
-
-SQL Layer MySQL业务层
-
-SQL接口（SQL 
+2. 索引的优势和劣势
+2.1 优势
+ * 可以提高数据检索的效率，降低数据库的IO成本，类似于书的目录。 – 检索
+   
         </div>
         
         
         <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/08/02/mysql/01-mysql基础/1. 逻辑架构/#more">阅读更多</a>
+                <a class="button is-size-7 is-light" href="/2019/08/02/mysql/01-mysql基础/6. mysql中的索引/#more">阅读更多</a>
                 </div>
             </div>
         </div>
@@ -546,73 +589,31 @@ JOIN < right_table > ON < join_co
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/08/02/mysql/01-mysql基础/2. mysql执行流程/">Mysql 执行流程</a>
+                <a class="has-link-black-ter" href="/2019/08/02/mysql/01-mysql基础/1. 逻辑架构/">Mysql 逻辑架构</a>
             
         </h1>
         <div class="content">
-            1. 简单版本的执行流程
+            1. 逻辑架构
 
 
-2. 复杂版本的执行流程
+2. 逻辑架构说明
+连接器（Connectors）
+也就是mysql的 连接驱动
+
+系统管理和控制工具（Management Serveices & Utilities） 
+
+连接池（Connection Pool）
+
+SQL Layer MySQL业务层
+
+SQL接口（SQL 
         </div>
         
         
         <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/08/02/mysql/01-mysql基础/2. mysql执行流程/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-08-01T16:00:00.000Z">2019-08-02</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/MySql/">MySql</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/MySql/Basic/">Basic</a>
-                </div>
-                
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/08/02/mysql/01-mysql基础/6. mysql中的索引/">Mysql中的索引原理</a>
-            
-        </h1>
-        <div class="content">
-            1. 是什么
-官方介绍索引是帮助MySQL高效获取数据的数据结构。更通俗的说，数据库索引好比是一本书前面的目录，能加快数据库的查询速度， 也就是排序好的快速查询的数据结构。
-
-2. 索引的优势和劣势
-2.1 优势
- * 可以提高数据检索的效率，降低数据库的IO成本，类似于书的目录。 – 检索
-   
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/08/02/mysql/01-mysql基础/6. mysql中的索引/#more">阅读更多</a>
+                <a class="button is-size-7 is-light" href="/2019/08/02/mysql/01-mysql基础/1. 逻辑架构/#more">阅读更多</a>
                 </div>
             </div>
         </div>
@@ -737,12 +738,11 @@ JOIN < right_table > ON < join_co
 </div>
 </div>
                 
-                
 
 
 
 
-<div class="column is-2-tablet is-2-desktop is-2-widescreen  has-order-3 column-right ">
+<div class="column is-2-tablet is-2-desktop is-2-widescreen  has-order-1 column-left ">
     
         
 <div class="card widget">
@@ -791,12 +791,17 @@ JOIN < right_table > ON < join_co
 </div>
     
     
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+        </div>
+    
 </div>
 
+                
             </div>
         </div>
     </section>
-    <footer class="footer">
+<!--    <footer class="footer">
     <div class="container">
         <div class="level">
             <div class="level-start has-text-centered-mobile">
@@ -817,7 +822,7 @@ JOIN < right_table > ON < join_co
             </div>
         </div>
     </div>
-</footer>
+</footer>-->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
 <script>moment.locale("zh-CN");</script>
