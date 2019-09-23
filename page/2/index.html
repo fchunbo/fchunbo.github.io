@@ -141,12 +141,12 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/07/22/Go/package/http/Go http包web server的原理/">Go Http包WebServer运行的整个流程与原理</a>
+                <a class="has-link-black-ter" href="/2019/07/22/Go/package/http/go语言提供的静态服务器/">go语言提供的静态服务器</a>
             
         </h1>
         <div class="content">
-            Http包WebServer运行的整个流程与原理
-讲解GO web server运行流程，使用如下例子来讲解。进行源码分析
+            go语言提供的静态服务器
+在go语言中，默认提供了静态的文件服务器，使用方法如下
 
 1
 2
@@ -180,6 +180,13 @@
 30
 31
 32
+33
+34
+35
+36
+37
+38
+39
 
         </div>
         
@@ -187,7 +194,7 @@
         <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/07/22/Go/package/http/Go http包web server的原理/#more">阅读更多</a>
+                <a class="button is-size-7 is-light" href="/2019/07/22/Go/package/http/go语言提供的静态服务器/#more">阅读更多</a>
                 </div>
             </div>
         </div>
@@ -449,6 +456,76 @@ c := make(chan int)
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
+                <a class="has-link-black-ter" href="/2019/03/28/Go/6.struct/">6. Go 语言中结构体的使用</a>
+            
+        </h1>
+        <div class="content">
+            go语言中结构体的使用
+1. 结构体的定义格式
+在go语言中结果的定义格式如下：
+
+1
+2
+3
+
+
+type structName struct {
+  filedList
+}
+
+
+列子如下：
+
+1
+2
+3
+4
+
+
+type Person struct {
+  Name string
+  age i
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/03/28/Go/6.struct/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-03-27T16:00:00.000Z">2019-03-28</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Go/">Go</a>
+                </div>
+                
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
                 <a class="has-link-black-ter" href="/2019/03/28/Go/5.函数闭包的使用以及注意/">5. Go 闭包</a>
             
         </h1>
@@ -510,7 +587,7 @@ func main() {
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-03-27T16:00:00.000Z">2019-03-28</time>
+                <time class="level-item has-text-grey" datetime="2018-12-09T16:00:00.000Z">2018-12-10</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/Go/">Go</a>
@@ -523,42 +600,28 @@ func main() {
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/03/28/Go/6.struct/">6. Go 语言中结构体的使用</a>
+                <a class="has-link-black-ter" href="/2018/12/10/Go/3.go中的init函数/">3. Go 中的init函数</a>
             
         </h1>
         <div class="content">
-            go语言中结构体的使用
-1. 结构体的定义格式
-在go语言中结果的定义格式如下：
+            1. 概述
+每一个源文件都可以有一个init函数，这个函数会在main函数运行之前，被Go框架所调用。
 
-1
-2
-3
-
-
-type structName struct {
-  filedList
-}
-
-
-列子如下：
-
-1
-2
-3
-4
-
-
-type Person struct {
-  Name string
-  age i
+2. init 函数的特征
+ * init函数是用于程序执行前做包的初始化的函数，比如初始化包里的变量等
+   
+   
+ * 每个包可以拥有多个init函数
+   
+   
+ * 包的每个源文
         </div>
         
         
         <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/03/28/Go/6.struct/#more">阅读更多</a>
+                <a class="button is-size-7 is-light" href="/2018/12/10/Go/3.go中的init函数/#more">阅读更多</a>
                 </div>
             </div>
         </div>
@@ -613,62 +676,6 @@ Go语言中如下数据类型为值传递：
             <div class="level-start">
                 <div class="level-item">
                 <a class="button is-size-7 is-light" href="/2018/12/10/Go/2.go中的函数参数传递类型/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-12-09T16:00:00.000Z">2018-12-10</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Go/">Go</a>
-                </div>
-                
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2018/12/10/Go/3.go中的init函数/">3. Go 中的init函数</a>
-            
-        </h1>
-        <div class="content">
-            1. 概述
-每一个源文件都可以有一个init函数，这个函数会在main函数运行之前，被Go框架所调用。
-
-2. init 函数的特征
- * init函数是用于程序执行前做包的初始化的函数，比如初始化包里的变量等
-   
-   
- * 每个包可以拥有多个init函数
-   
-   
- * 包的每个源文
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2018/12/10/Go/3.go中的init函数/#more">阅读更多</a>
                 </div>
             </div>
         </div>

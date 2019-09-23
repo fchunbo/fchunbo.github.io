@@ -225,26 +225,28 @@ func main() {
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2018/12/10/Go/2.go中的函数参数传递类型/">2. Go中函数参数传递类型</a>
+                <a class="has-link-black-ter" href="/2018/12/10/Go/3.go中的init函数/">3. Go 中的init函数</a>
             
         </h1>
         <div class="content">
             1. 概述
-在Go语言中，函数的参数的传递类型，分为值传递和引用传递。但本质就只有值传递，引用传递本质传递是数据存储空间的地址值。
+每一个源文件都可以有一个init函数，这个函数会在main函数运行之前，被Go框架所调用。
 
-2. 值传递和引用传递
-Go语言中如下数据类型为值传递：
-
- * 基本数据类型中int系列、float系列、bool、string、byte
- * 数组
- * 结构体
+2. init 函数的特征
+ * init函数是用于程序执行前做包的初始化的函数，比如初始化包里的变量等
+   
+   
+ * 每个包可以拥有多个init函数
+   
+   
+ * 包的每个源文
         </div>
         
         
         <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2018/12/10/Go/2.go中的函数参数传递类型/#more">阅读更多</a>
+                <a class="button is-size-7 is-light" href="/2018/12/10/Go/3.go中的init函数/#more">阅读更多</a>
                 </div>
             </div>
         </div>
@@ -279,28 +281,26 @@ Go语言中如下数据类型为值传递：
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2018/12/10/Go/3.go中的init函数/">3. Go 中的init函数</a>
+                <a class="has-link-black-ter" href="/2018/12/10/Go/2.go中的函数参数传递类型/">2. Go中函数参数传递类型</a>
             
         </h1>
         <div class="content">
             1. 概述
-每一个源文件都可以有一个init函数，这个函数会在main函数运行之前，被Go框架所调用。
+在Go语言中，函数的参数的传递类型，分为值传递和引用传递。但本质就只有值传递，引用传递本质传递是数据存储空间的地址值。
 
-2. init 函数的特征
- * init函数是用于程序执行前做包的初始化的函数，比如初始化包里的变量等
-   
-   
- * 每个包可以拥有多个init函数
-   
-   
- * 包的每个源文
+2. 值传递和引用传递
+Go语言中如下数据类型为值传递：
+
+ * 基本数据类型中int系列、float系列、bool、string、byte
+ * 数组
+ * 结构体
         </div>
         
         
         <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2018/12/10/Go/3.go中的init函数/#more">阅读更多</a>
+                <a class="button is-size-7 is-light" href="/2018/12/10/Go/2.go中的函数参数传递类型/#more">阅读更多</a>
                 </div>
             </div>
         </div>
